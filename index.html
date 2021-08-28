@@ -12,6 +12,7 @@
     <div class="bg"></div>
     <header>
       <a href="#" class="logo">Frutas</a>
+      <div class="toggle"></div>
       <ul class="navegacao">
         <li><a href="#" class="ativo">Home</a></li>
         <li><a href="#">Menu</a></li>
@@ -33,7 +34,7 @@
       <li data-text="Maçã" class="ativo"><img src="imagens/apple.png" onclick="imgSlider('imagens/apple.png');mudaBg('#fc4a55')" alt="maçã"></li>
       <li data-text="Manga"><img src="imagens/mango.png" onclick="imgSlider('imagens/mango.png');mudaBg('#ffcc02')" alt="manga"></li>
       <li data-text="Melancia"><img src="imagens/watermelon.png" onclick="imgSlider('imagens/watermelon.png');mudaBg('#92ba3c')" alt="melancia"></li>
-      <li data-text="Fruta"><img src="imagens/dragonFruits.png" onclick="imgSlider('imagens/dragonFruits.png');mudaBg('#fb6cb2')" alt="fruta"></li>
+      <li data-text="Pitaia"><img src="imagens/dragonFruits.png" onclick="imgSlider('imagens/dragonFruits.png');mudaBg('#fb6cb2')" alt="Pitaia"></li>
       <li data-text="Abacaxi"><img src="imagens/pineApple.png" onclick="imgSlider('imagens/pineApple.png');mudaBg('#ffb42b')" alt="abacaxi"></li>
     </ul>
     <ul class="social">
@@ -44,6 +45,14 @@
   </section>
 
   <script>
+
+    let menuToggle = document.querySelector('.toggle');
+    let navegacao = document.querySelector('.navegacao');
+    menuToggle.onclick = function() {
+      menuToggle.classList.toggle('ativo');
+      navegacao.classList.toggle('ativo');
+    }
+
     // muda imagem ao clicar
     function imgSlider(imagem) {
       document.querySelector('.frutas').src = imagem;
