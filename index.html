@@ -29,6 +29,27 @@
         <img src="imagens/apple.png" alt="Maçã">
       </div>
     </div>
+    <ul class="mini">
+      <li data-text="Maçã"><img src="imagens/apple.png" alt="maçã"></li>
+      <li data-text="Manga"><img src="imagens/mango.png" alt="manga"></li>
+      <li data-text="Melancia"><img src="imagens/watermelon.png" alt="melancia"></li>
+      <li data-text="Fruta"><img src="imagens/dragonFruits.png" alt="fruta"></li>
+      <li data-text="Abacaxi"><img src="imagens/pineApple.png" alt="abacaxi"></li>
+    </ul>
   </section>
+
+  <script>
+   // adicionar classe ativo na miniatura selecionada
+   let miniatura = document.querySelectorAll('.mini li');
+   for (let i = 0; i < miniatura.length; i++) {
+    miniatura[i].onclick = function() {
+      var c = 0;
+      while (c < miniatura.length) {
+        miniatura[c++].className = 'check';
+      }
+      miniatura[i].className = 'check ativo';
+    }
+   }
+  </script>
 </body>
 </html>

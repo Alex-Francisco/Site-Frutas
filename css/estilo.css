@@ -128,3 +128,49 @@ header .navegacao li a.ativo, header .navegacao li a:hover {
 .content .imgBox img {
   max-width: 400px;
 }
+
+.mini {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.mini li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.mini li.ativo {
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.mini li::before {
+  position: absolute;
+  top: -200px;
+  left: -100px;
+  content: attr(data-text);
+  white-space: nowrap;
+  font-size: 8em;
+  color: rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.mini li.ativo::before {
+  opacity: 1;
+}
+
+.mini li img {
+  max-width: 50px;
+}
+
