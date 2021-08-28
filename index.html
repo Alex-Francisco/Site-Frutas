@@ -26,19 +26,35 @@
         <a href="#">Ler Mais</a>
       </div>
       <div class="imgBox">
-        <img src="imagens/apple.png" alt="Maçã">
+        <img src="imagens/apple.png" class="frutas" alt="Frutas">
       </div>
     </div>
     <ul class="mini">
-      <li data-text="Maçã"><img src="imagens/apple.png" alt="maçã"></li>
-      <li data-text="Manga"><img src="imagens/mango.png" alt="manga"></li>
-      <li data-text="Melancia"><img src="imagens/watermelon.png" alt="melancia"></li>
-      <li data-text="Fruta"><img src="imagens/dragonFruits.png" alt="fruta"></li>
-      <li data-text="Abacaxi"><img src="imagens/pineApple.png" alt="abacaxi"></li>
+      <li data-text="Maçã" class="ativo"><img src="imagens/apple.png" onclick="imgSlider('imagens/apple.png');mudaBg('#fc4a55')" alt="maçã"></li>
+      <li data-text="Manga"><img src="imagens/mango.png" onclick="imgSlider('imagens/mango.png');mudaBg('#ffcc02')" alt="manga"></li>
+      <li data-text="Melancia"><img src="imagens/watermelon.png" onclick="imgSlider('imagens/watermelon.png');mudaBg('#92ba3c')" alt="melancia"></li>
+      <li data-text="Fruta"><img src="imagens/dragonFruits.png" onclick="imgSlider('imagens/dragonFruits.png');mudaBg('#fb6cb2')" alt="fruta"></li>
+      <li data-text="Abacaxi"><img src="imagens/pineApple.png" onclick="imgSlider('imagens/pineApple.png');mudaBg('#ffb42b')" alt="abacaxi"></li>
+    </ul>
+    <ul class="social">
+      <li><a href="#"><img src="imagens/facebook.png"</a></li>
+      <li><a href="#"><img src="imagens/twitter.png"</a></li>
+      <li><a href="#"><img src="imagens/instagram.png"</a></li>
     </ul>
   </section>
 
   <script>
+    // muda imagem ao clicar
+    function imgSlider(imagem) {
+      document.querySelector('.frutas').src = imagem;
+    }
+
+    // muda cor de fundo
+    function mudaBg(cor) {
+      const bg = document.querySelector('.bg');
+      bg.style.background = cor;
+    }
+
    // adicionar classe ativo na miniatura selecionada
    let miniatura = document.querySelectorAll('.mini li');
    for (let i = 0; i < miniatura.length; i++) {
